@@ -14,6 +14,8 @@ jobs:
   sync_latest_from_upstream:
     runs-on: ubuntu-latest
     name: Sync latest commits from upstream repo
+    permissions:
+      pull-requests: write
 
     steps:
     # REQUIRED step
@@ -35,10 +37,10 @@ jobs:
       with:
         target_sync_branch: upstream-main
         # REQUIRED 'target_repo_token' exactly like this!
-        target_repo_token: ${{ github.TOKEN }}
+        target_repo_token: ${{ secrets.GITHUB_TOKEN }}
         upstream_sync_branch: main
         upstream_sync_repo: lobehub/lobe-chat
-        upstream_repo_access_token: ${{ github.TOKEN }}
+        upstream_repo_access_token: ${{ secrets.GITHUB_TOKEN }}
 
         # Set test_mode true during manual dispatch to run tests instead of the true action!!
         test_mode: ${{ inputs.sync_test_mode }}
