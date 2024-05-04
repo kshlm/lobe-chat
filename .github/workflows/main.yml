@@ -38,7 +38,7 @@ jobs:
         target_repo_token: ${{ secrets.GITHUB_TOKEN }}
         upstream_sync_branch: main
         upstream_sync_repo: lobehub/lobe-chat
-        #upstream_repo_access_token: ${{ secrets.GITHUB_TOKEN }}
+        upstream_repo_access_token: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
 
         # Set test_mode true during manual dispatch to run tests instead of the true action!!
         test_mode: ${{ inputs.sync_test_mode }}
