@@ -15,8 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Sync latest commits from upstream repo
     permissions:
-      contents: read
-      pull-requests: write
+      contents: write
 
     steps:
     # REQUIRED step
